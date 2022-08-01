@@ -1,0 +1,85 @@
+body{
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+
+}
+.menu ul{
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    align-items: center;
+    justify-content: center;
+    background-color: #000;
+    margin-top: 0;
+}
+
+.menu li{
+    margin: 1.2em;
+    text-decoration-line: none;
+    font-style: normal;
+    font-weight: bold;
+    color: aliceblue;
+}
+
+.menu li a{
+    text-decoration-line: none;
+    color: aliceblue;
+}
+
+.menu li a:hover{
+    color: cadetblue;
+}
+
+.polyhead{
+    color: aliceblue;
+    background: black;
+    margin-bottom: 0;
+    width: 100%;
+    align-content: center;
+    border-bottom: aliceblue 0.2em solid;
+}
+
+.polyhead h3{
+    margin: 0 auto;
+    text-align: center;
+    padding: 0.7em;
+    font-size: 2em;
+}
+
+.content{
+    background-color: #e0e0da;
+    width: 80%;
+    margin-bottom: 0.4em;
+    border-radius: 8px;
+    padding: 0.5em;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.content h3 a{
+    text-decoration-line: none ;
+    color: black;
+}
+
+.content h3 a:hover{
+    color: darkcyan;
+}
+
+.footer{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+}
+
+.footer p{
+    text-align: center;
+    background-color: black;
+    color: aliceblue;
+    margin-bottom: 0;
+    padding: 0.4em;
+
+}

@@ -26,6 +26,14 @@ class ContentModel{
         return (new ArticleDaoImpl($this->daoFact))->getAllArticles();
     }
 
+    public function getArticlesBySql($sql){
+        return (new ArticleDaoImpl($this->daoFact))->getArticlesBySql($sql);
+    }
+
+    public function getArticlesRowsNumber(){
+        return (new ArticleDaoImpl($this->daoFact))->getArticlesRowsNumber();
+    }
+
     public function updateOneArticle($id, $title, $content, $category){
         return (new ArticleDaoImpl($this->daoFact))->updateOneArticle($id, $title, $content, $category);
     }

@@ -51,8 +51,8 @@ body{
 
 .content{
     background-color: #e0e0da;
-    width: 80%;
-    margin-bottom: 0.4em;
+    width: 60%;
+    margin-bottom: 0.8em;
     border-radius: 8px;
     padding: 0.5em;
     margin-right: auto;
@@ -82,4 +82,20 @@ body{
     margin-bottom: 0;
     padding: 0.4em;
 
+}
+
+.pagination{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.pagination .pagination-li{
+    margin: 0.5em;
+    text-decoration-line: none;
+    font-style: normal;
+    font-weight: bold;
+    color: aliceblue;
 }

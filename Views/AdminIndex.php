@@ -1,6 +1,7 @@
 <?php
 if (isset($_SESSION["email"])){
     require($_SERVER['DOCUMENT_ROOT'].'/polytech/inc/nav.php') ;
+    $i = 1;
     ?>
         <div class="container">
             <h4 class="mt-4 mb-4">Page d'administration des articles</h4>
@@ -11,16 +12,18 @@ if (isset($_SESSION["email"])){
                     <th scope="col">Titre</th>
                     <th scope="col">Category</th>
                     <th scope="col">Contenu</th>
+                    <th scope="col">Date de création</th>
                     <th scope="col">Actions</th>
                 </tr>
                 </thead>
                 <tbody>
                 <?php foreach ($articles as $article): ?>
                     <tr>
-                        <th scope="row"><?= $article['id']; ?></th>
+                        <th scope="row"><?= $i++; ?></th>
                         <td><?= $article['title']; ?></td>
                         <td><?= $article['category']; ?></td>
-                        <td><?= substr($article['content'], 0, 100) ; ?>...</td>
+                        <td><?= substr($article['content'], 0, 50) ; ?>...</td>
+                        <td><?= $article['createdDate']; ?></td>
                         <td>
                             <a href="http://localhost/polytech/admin/<?= $article['id']; ?>" class="btn">
                                 <i class="bi bi-eye"></i>

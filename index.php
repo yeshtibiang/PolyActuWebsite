@@ -5,16 +5,17 @@ $catRoutes = ["sport", "politique", "education", "sante"];
 
 if (isset($_GET['url'])){
     $url = explode('/', $_GET['url']);
-    echo "<h1>Accueil</h1>";
 }
-
-if (isset($_GET['page'])){
-    $page = $_GET['page'];
-    echo "<h1>Page $page</h1>";
-}
-
 if ($url[0] == ''){
-    require './Controller/indexController.php';
+    if (isset($_GET['page'])){
+        $page = $_GET['page'];
+        require './Controller/indexController.php';
+    }
+    else{
+        $page = 1;
+        require './Controller/indexController.php';
+    }
+
 }
 elseif ($url[0] == "login" and !isset($url[1])){
     require './Controller/LoginController.php';

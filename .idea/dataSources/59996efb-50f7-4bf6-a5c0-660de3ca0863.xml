@@ -764,88 +764,99 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     <collation id="223" parent="1" name="utf8mb4_vietnamese_ci">
       <Charset>utf8mb4</Charset>
     </collation>
-    <schema id="224" parent="1" name="information_schema">
+    <schema id="224" parent="1" name="dsxml">
       <CollationName>utf8_general_ci</CollationName>
     </schema>
-    <schema id="225" parent="1" name="mysql">
+    <schema id="225" parent="1" name="ecole">
+      <CollationName>utf8_general_ci</CollationName>
+    </schema>
+    <schema id="226" parent="1" name="information_schema">
+      <CollationName>utf8_general_ci</CollationName>
+    </schema>
+    <schema id="227" parent="1" name="mysql">
       <CollationName>latin1_swedish_ci</CollationName>
     </schema>
-    <schema id="226" parent="1" name="performance_schema">
+    <schema id="228" parent="1" name="performance_schema">
       <CollationName>utf8_general_ci</CollationName>
     </schema>
-    <schema id="227" parent="1" name="polyactu">
+    <schema id="229" parent="1" name="polyactu">
       <Current>1</Current>
       <CollationName>utf8_general_ci</CollationName>
     </schema>
-    <schema id="228" parent="1" name="sys">
+    <schema id="230" parent="1" name="sys">
       <CollationName>utf8_general_ci</CollationName>
     </schema>
-    <user id="229" parent="1" name="mysql.session">
+    <user id="231" parent="1" name="mysql.session">
       <Host>localhost</Host>
     </user>
-    <user id="230" parent="1" name="mysql.sys">
+    <user id="232" parent="1" name="mysql.sys">
       <Host>localhost</Host>
     </user>
-    <user id="231" parent="1" name="root">
+    <user id="233" parent="1" name="root">
       <Host>localhost</Host>
     </user>
-    <user id="232" parent="1" name="toto"/>
-    <table id="233" parent="227" name="article">
+    <user id="234" parent="1" name="toto"/>
+    <table id="235" parent="229" name="article">
       <Engine>InnoDB</Engine>
       <CollationName>utf8_general_ci</CollationName>
     </table>
-    <table id="234" parent="227" name="articles">
+    <table id="236" parent="229" name="articles">
       <Engine>InnoDB</Engine>
       <CollationName>utf8_general_ci</CollationName>
     </table>
-    <column id="235" parent="233" name="id">
+    <column id="237" parent="235" name="id">
       <AutoIncrement>6</AutoIncrement>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="236" parent="233" name="titre">
+    <column id="238" parent="235" name="titre">
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="237" parent="233" name="texte">
+    <column id="239" parent="235" name="texte">
       <DataType>text|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="238" parent="233" name="categorie">
+    <column id="240" parent="235" name="categorie">
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <key id="239" parent="233" name="PRIMARY">
+    <key id="241" parent="235" name="PRIMARY">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
     </key>
-    <column id="240" parent="234" name="id">
-      <AutoIncrement>4</AutoIncrement>
+    <column id="242" parent="236" name="id">
+      <AutoIncrement>15</AutoIncrement>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="241" parent="234" name="title">
+    <column id="243" parent="236" name="title">
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="242" parent="234" name="content">
+    <column id="244" parent="236" name="content">
       <DataType>text|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="243" parent="234" name="category">
+    <column id="245" parent="236" name="category">
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <key id="244" parent="234" name="PRIMARY">
+    <column id="246" parent="236" name="createdDate">
+      <DataType>date|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+    </column>
+    <key id="247" parent="236" name="PRIMARY">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>

@@ -18,11 +18,36 @@ class ArticleDaoImpl implements ArticleInterface
     public function getAllArticles(){
 
         try{
-            $requete = 'SELECT * FROM articles';
+            $requete = 'SELECT * FROM articles order by createdDate desc';
             $dbreq = $this->db->prepare($requete);
             $dbreq->execute();
             $this->closeConnection();
             return $dbreq->fetchAll();
+        }
+        catch(PDOException $e){
+            die("erreur: ".$e->getMessage());
+        }
+    }
+
+    public function getArticlesBySql($sql){
+        try{
+            $dbreq = $this->db->prepare($sql);
+            $dbreq->execute();
+            $this->closeConnection();
+            return $dbreq->fetchAll();
+        }
+        catch(PDOException $e){
+            die("erreur: ".$e->getMessage());
+        }
+    }
+
+    public function getArticlesRowsNumber(){
+        try{
+            $requete = 'SELECT COUNT(*) FROM articles';
+            $dbreq = $this->db->prepare($requete);
+            $dbreq->execute();
+            $this->closeConnection();
+            return $dbreq->fetchColumn();
         }
         catch(PDOException $e){
             die("erreur: ".$e->getMessage());
@@ -34,7 +59,7 @@ class ArticleDaoImpl implements ArticleInterface
         try{
             //$category = $_GET["category"];
             $this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $requete = 'SELECT * FROM articles where category = :category';
+            $requete = 'SELECT * FROM articles where category = :category order by createdDate desc';
             $dbreq = $this->db->prepare($requete);
             $dbreq->execute([
                 'category' => $category
@@ -49,13 +74,15 @@ class ArticleDaoImpl implements ArticleInterface
 
     function addOneArticle($title, $category, $content){
         try{
+            $createdDate = date("Y-m-d H:i:s");
             $this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $requete = 'INSERT INTO articles (title, category, content) VALUES (:title, :category, :content)';
+            $requete = 'INSERT INTO articles (title, category, content, createdDate) VALUES (:title, :category, :content, :createdDate)';
             $dbreq = $this->db->prepare($requete);
             $dbreq->execute([
                 'title' => $title,
                 'category' => $category,
-                'content' => $content
+                'content' => $content,
+                'createdDate' => $createdDate
             ]);
             $this->closeConnection();
             return 1;

@@ -7,17 +7,12 @@ if (isset($_GET['url'])){
     $url = explode('/', $_GET['url']);
 }
 if ($url[0] == ''){
-    if (isset($_GET['page'])){
-        $page = $_GET['page'];
-        require './Controller/indexController.php';
-    }
-    else{
-        $page = 1;
-        require './Controller/indexController.php';
-    }
+    $page = $_GET['page'] ?? 1;
+    require './Controller/indexController.php';
 
 }
 elseif ($url[0] == "login" and !isset($url[1])){
+    $errorMessage = $_GET['errorMessage'] ?? "";
     require './Controller/LoginController.php';
 }
 elseif ($url[0] == "logout" and !isset($url[1])){

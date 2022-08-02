@@ -20,11 +20,27 @@ class Login extends Db {
 
         $resultat = $rep->return;
 
-        if ($resultat != null){
-            $_SESSION["login"] = true;
-            $_SESSION["email"] =  $email;
 
-            header("location: http://localhost/polytech");
+        if ($resultat != null){
+            if ($resultat->autorized == "admin"){
+                $_SESSION["email"] = $email;
+                $_SESSION["role"] = "admin";
+                header("location: http://localhost/polytech/admin");
+            }
+            elseif($resultat->autorized){
+                $_SESSION["email"] = $email;
+                $_SESSION["role"] = "user";
+                header("location: http://localhost/polytech");
+            }
+            else{
+                $errorMessage = "Vous n'êtes pas autorisé à vous connecter!";
+                header("location: http://localhost/polytech/login?errorMessage=".$errorMessage);
+            }
+
+//            $_SESSION["login"] = true;
+//            $_SESSION["email"] =  $email;
+//
+//            header("location: http://localhost/polytech");
         }
         else{
             header("location: http://localhost/polytech/login");

@@ -17,10 +17,6 @@ class OneNewController{
     }
 }
 
-//require "./Models/ArticleDAO.php";
-//$articles = (new ArticleDAO())->getOneArticle($id);
-//
-//require './Views/oneNewView.php';
 $model = new ContentModel();
 $controller = new OneNewController($model);
 $controller->shoOneArticle($id);

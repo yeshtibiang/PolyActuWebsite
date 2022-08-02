@@ -43,11 +43,12 @@ class ArticleDaoImpl implements ArticleInterface
 
     public function getArticlesRowsNumber(){
         try{
-            $requete = 'SELECT COUNT(*) FROM articles';
-            $dbreq = $this->db->prepare($requete);
-            $dbreq->execute();
-            $this->closeConnection();
-            return $dbreq->fetchColumn();
+            $url ="http://localhost:8082/servicesr_war/webapi/articles/all_json";
+            $client = curl_init($url);
+            curl_setopt($client, CURLOPT_RETURNTRANSFER, true);
+            $response = curl_exec($client);
+            $articles = json_decode($response, true);
+            return count($articles);
         }
         catch(PDOException $e){
             die("erreur: ".$e->getMessage());
@@ -57,7 +58,6 @@ class ArticleDaoImpl implements ArticleInterface
     public function getAllArticlesByCategory($category){
 
         try{
-            //$category = $_GET["category"];
             $this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $requete = 'SELECT * FROM articles where category = :category order by createdDate desc';
             $dbreq = $this->db->prepare($requete);

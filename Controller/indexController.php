@@ -18,6 +18,17 @@ class IndexController{
     }
 }
 
+
+$url ="http://localhost:8082/servicesr_war/webapi/articles/all_json";
+$client = curl_init($url);
+curl_setopt($client, CURLOPT_RETURNTRANSFER, true);
+$response = curl_exec($client);
+
+$all_articles = json_decode($response, true);
+
+var_dump($all_articles);
+die();
+
 $no_of_records_per_page = 5;
 $offset = ($page - 1) * $no_of_records_per_page;
 

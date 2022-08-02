@@ -12,7 +12,11 @@ class AdminController{
 
     public function showAllArticles(): void
     {
-        $articles = $this->contentModel->getAllArticles();
+        $url ="http://localhost:8082/servicesr_war/webapi/articles/all_json";
+        $client = curl_init($url);
+        curl_setopt($client, CURLOPT_RETURNTRANSFER, true);
+        $response = curl_exec($client);
+        $articles = json_decode($response, true);
         require_once($_SERVER['DOCUMENT_ROOT'].'/polytech/Views/adminIndex.php') ;
     }
 
@@ -38,7 +42,7 @@ if (isset($_SESSION["email"])){
 
 
 } else {
-    header("Location: /login");
+    header("Location: /polytech/login");
 
 }
 

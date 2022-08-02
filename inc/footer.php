@@ -1,5 +1,5 @@
 <div class="footer">
-    <p>&copy; copyright Yeshua 2022</p>
+    <p>&copy; copyright Polytech 2022</p>
 </div>
 </body>
 </html>

@@ -34,23 +34,25 @@
         <li>
             <a href="http://localhost/polytech/sante">Santé</a>
         </li>
+        <li>
+            <a href="http://localhost/polytech/admin">
+                Administration Articles
+            </a>
+        </li>
         <?php if (isset($_SESSION["email"]))
         {
         ?>
             <li>
-                Connecté
-            </li>
-            <li>
-                <a href="http://localhost/polytech/admin">
-                    Administration Articles
+                <a href="http://localhost/polytech/logout">
+                    Déconnexion
                 </a>
             </li>
         <?php
         }else{
             ?>
-        <li>
-            <a href="http://localhost/polytech/login">Login</a>
-        </li>
+            <li>
+                <a href="http://localhost/polytech/login">Login</a>
+            </li>
         <?php }
         ?>
     </ul>

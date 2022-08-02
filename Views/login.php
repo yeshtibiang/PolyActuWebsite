@@ -8,10 +8,10 @@
         </p>
         <?php } ?>
         <form action="http://localhost/polytech/Controller/LoginController.php" method="post" class="form">
-            <input type="text" name="email" placeholder="Email" required="required">
-            <input type="password" name="password" placeholder="Password" required="required">
+            <input type="text" name="email" placeholder="Email" required="required" class="form-control mb-3">
+            <input type="password" name="password" placeholder="Password" required="required" class="form-control">
             <br>
-            <button type="submit" name="submit">LOGIN</button>
+            <button type="submit" name="submit" class="btn btn-secondary">LOGIN</button>
         </form>
     </div>
 

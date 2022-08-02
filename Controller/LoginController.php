@@ -5,8 +5,8 @@ if (isset($_SESSION["email"])){
     header("location: http://localhost/polytech");
 }
 else{
-    include "./Models/db.classe.php";
-    include "./Models/login.class.php";
+    include $_SERVER['DOCUMENT_ROOT']."/polytech/Models/db.classe.php";
+    include $_SERVER['DOCUMENT_ROOT']."/polytech/Models/login.class.php";
     if (isset($_POST["submit"])){
         $email = $_POST["email"];
         $password = $_POST["password"];

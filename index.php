@@ -20,6 +20,9 @@ if ($url[0] == ''){
 elseif ($url[0] == "login" and !isset($url[1])){
     require './Controller/LoginController.php';
 }
+elseif ($url[0] == "logout" and !isset($url[1])){
+    require './Controller/LogoutController.php';
+}
 elseif ($url[0] == "admin" and !isset($url[1])){
     require './Controller/adminController.php';
 }
